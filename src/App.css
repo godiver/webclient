@@ -1,0 +1,22 @@
+.title {
+  position: relative;
+  padding: 6px;
+  font-size: 40px;
+  color: #fff;
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(315deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
+  background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
+}
+
+span {
+  display: block;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, .2);
+}
+
+.bookshelf {
+  display: -webkit-flex;
+  box-sizing: border-box;
+  padding: 12px;
+}
