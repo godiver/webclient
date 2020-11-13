@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import './App.css';
 
 class App extends Component {
@@ -9,6 +10,13 @@ class App extends Component {
       isLoaded: false,
       items: []
     }
+  }
+
+  componentDidMount() {
+    return url = "";
+    axios.get (url).then((res) => {
+      this.setState({ book: res.data });
+    });
   }
 
   render() {
