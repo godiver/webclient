@@ -21,8 +21,4 @@ class App extends Component {
   }
 }
 
-// const mapStateToProps = state => ({ events: state.events })
-
-// const mapDispatchToProps = ({ getTitleEvents })
-
 export default App;
