@@ -3,6 +3,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
+    colors: {
+      main: {
+        500: "#243C7A",
+      },
+    },
   },
   variants: {
     extend: {},
