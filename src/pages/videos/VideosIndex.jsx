@@ -24,5 +24,19 @@ export const VideosIndex = () => {
     })();
   }, []);
 
-  return <WithHeader></WithHeader>;
+  return (
+    <WithHeader>
+      <div className="mt-1">
+        {videos.map((videos) => (
+          <div className="w-full">
+            <img
+              src={videos.snippet.thumbnails.medium.url}
+              alt={videos.snippet.title}
+              className="object-cover sm:w-full"
+            />
+          </div>
+        ))}
+      </div>
+    </WithHeader>
+  );
 };
