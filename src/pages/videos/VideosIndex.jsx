@@ -28,7 +28,7 @@ export const VideosIndex = () => {
     <WithHeader>
       <div className="mt-1">
         {videos.map((videos) => (
-          <div className="w-full">
+          <div className="sm:w-full">
             <img
               src={videos.snippet.thumbnails.medium.url}
               alt={videos.snippet.title}
