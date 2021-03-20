@@ -8,6 +8,12 @@ module.exports = {
         500: "#243C7A",
       },
     },
+    screens: {
+      sm: { max: "640px" },
+      md: { max: "768px" },
+      lg: { max: "1024px" },
+      xl: { min: "1025px" },
+    },
   },
   variants: {
     extend: {},
