@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 import { WithHeader } from "../../layout/WithHeader";
 
@@ -9,6 +9,7 @@ export const VideosIndex = () => {
   const [loading, setLoading] = useState(false);
   const [videos, setVideos] = useState([]);
   const query = new URLSearchParams(useLocation().search);
+  const history = useHistory();
 
   useEffect(() => {
     const title = query.get("title");
@@ -24,12 +25,21 @@ export const VideosIndex = () => {
     })();
   }, []);
 
+  const handleClick = (e) => {
+    const clickedVideoId = e.currentTarget.getAttribute("videoid");
+    const video = videos.find((video) => video.id.videoId === clickedVideoId);
+    debugger;
+    history.push(`/watch?videoId=${video.id.videoId}`);
+  };
+
   return (
     <WithHeader>
       <div className="flex flex-col items-center">
         {videos.map((video) => (
           <div
             key={video.id.videoId}
+            videoid={video.id.videoId}
+            onClick={handleClick}
             className="sm:w-full w-4/5 mb-2 cursor-pointer"
           >
             <img
