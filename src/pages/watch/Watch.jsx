@@ -11,7 +11,7 @@ export const WatchIndex = () => {
   const query = new URLSearchParams(useLocation().search);
 
   useEffect(() => {
-    const title = query.get("title");
+    const title = query.get("videoId");
     (async () => {
       try {
         setLoading(true);

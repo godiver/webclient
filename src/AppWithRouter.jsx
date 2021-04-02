@@ -6,7 +6,7 @@ import "./index.css";
 
 import Top from "./pages/Top";
 import { VideosIndex } from "./pages/videos/VideosIndex";
-import { WatchIndex } from "./pages/Watch";
+import { WatchIndex } from "./pages/watch/Watch";
 
 export const AppWithRouter = () => {
   return (
