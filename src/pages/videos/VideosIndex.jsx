@@ -40,14 +40,14 @@ export const VideosIndex = () => {
             key={video.id.videoId}
             videoid={video.id.videoId}
             onClick={handleClick}
-            className="sm:w-full w-4/5 mb-2 cursor-pointer"
+            className="sm:w-full w-3/5 mb-2 cursor-pointer"
           >
             <img
               src={video.snippet.thumbnails.medium.url}
               alt={video.snippet.title}
               className="object-cover w-full"
             />
-            <div className="sm:w-full py-2 px-2">
+            <div className="w-full py-2 px-2">
               <div className="sm:w-full font-medium text-xl leading-tight truncate">
                 {video.snippet.title}
               </div>
