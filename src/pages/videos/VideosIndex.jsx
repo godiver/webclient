@@ -26,14 +26,27 @@ export const VideosIndex = () => {
 
   return (
     <WithHeader>
-      <div className="mt-1">
-        {videos.map((videos) => (
-          <div className="sm:w-full">
+      <div className="flex flex-col items-center">
+        {videos.map((video) => (
+          <div
+            key={video.id.videoId}
+            className="sm:w-full w-4/5 mb-2 cursor-pointer"
+          >
             <img
-              src={videos.snippet.thumbnails.medium.url}
-              alt={videos.snippet.title}
-              className="object-cover sm:w-full"
+              src={video.snippet.thumbnails.medium.url}
+              alt={video.snippet.title}
+              className="object-cover w-full"
             />
+            <div className="sm:w-full py-2 px-2">
+              <div className="sm:w-full font-medium text-xl leading-tight truncate">
+                {video.snippet.title}
+              </div>
+              <div className="mt-1">
+                <div className="leading-none text-sm">
+                  {video.snippet.channelTitle}
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
