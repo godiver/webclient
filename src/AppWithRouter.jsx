@@ -6,6 +6,7 @@ import "./index.css";
 
 import Top from "./pages/Top";
 import { VideosIndex } from "./pages/videos/VideosIndex";
+import { WatchIndex } from "./pages/Watch";
 
 export const AppWithRouter = () => {
   return (
@@ -13,6 +14,7 @@ export const AppWithRouter = () => {
       <Switch>
         <Route exact path="/" component={Top}></Route>
         <Route exact path="/videos" component={VideosIndex}></Route>
+        <Route exact path="/watch" component={WatchIndex}></Route>
       </Switch>
     </Router>
   );
