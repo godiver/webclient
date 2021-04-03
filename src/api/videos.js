@@ -5,5 +5,5 @@ export const fetchVideos = async (title) => {
 };
 
 export const fetchVideo = async (videoId) => {
-  return api.get(`/api/v1/books/watch/${videoId}`);
+  return api.get(`/api/v1/watch/${videoId}`);
 };
