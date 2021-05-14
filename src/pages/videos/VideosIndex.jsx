@@ -4,6 +4,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import { WithHeader } from "../../layout/WithHeader";
 
 import { fetchVideos } from "../../api/videos";
+import { Loading } from "../../component/Loading";
 
 export const VideosIndex = () => {
   const [loading, setLoading] = useState(false);
@@ -33,6 +34,7 @@ export const VideosIndex = () => {
 
   return (
     <WithHeader>
+      {loading ? <Loading /> : null}
       <div className="flex flex-col items-center">
         {videos.map((video) => (
           <div
