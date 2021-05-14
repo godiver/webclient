@@ -4,7 +4,7 @@ import { Header } from "../component/Header";
 
 export const WithHeader = (props) => {
   return (
-    <div>
+    <div className="relative">
       <Header></Header>
       {props.children}
     </div>
