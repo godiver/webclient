@@ -34,11 +34,6 @@ class Top extends Component {
             選んだ本からその本の要約しているyoutubeの動画を視聴することができます。
           </p>
         </div>
-        <div className="bookshelf">
-          <p>
-            本一覧情報を取得してここに表示&詳細ページのリンクをつける
-          </p>
-        </div>
         <div>
           { this.renderBooks() }
         </div>
