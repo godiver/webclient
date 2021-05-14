@@ -27,10 +27,15 @@ export const WatchIndex = () => {
   return (
     <WithHeader>
       <div className="flex flex-col items-center">
+      <div
+          className="sm:w-full w-3/5 mb-2 cursor-pointer"
+        >
+          {video.snippet ? video.snippet.title : <p>タイトル</p>}
+        </div>
         <div
           className="sm:w-full w-3/5 mb-2 cursor-pointer"
         >
-          {video.snippet ? video.snippet.title : <p>ない</p>}
+          {video.snippet ? video.snippet.channelTitle : <p>チャンネル名</p>}
         </div>
       </div>
     </WithHeader>
