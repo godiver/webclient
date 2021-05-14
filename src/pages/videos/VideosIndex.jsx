@@ -28,7 +28,6 @@ export const VideosIndex = () => {
   const handleClick = (e) => {
     const clickedVideoId = e.currentTarget.getAttribute("videoid");
     const video = videos.find((video) => video.id.videoId === clickedVideoId);
-    debugger;
     history.push(`/watch?videoId=${video.id.videoId}`);
   };
 
