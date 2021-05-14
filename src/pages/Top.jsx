@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-
+import { Link } from 'react-router-dom'
 class Top extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +20,7 @@ class Top extends Component {
   renderBooks = () => {
     return this.state.books.map((book, index) => (
       <li key={index}>
-        {book.Item.author}
+        <Link to={`/videos?title=${book.Item.title}`}>{book.Item.title}</Link>
       </li>
     ))
   }
