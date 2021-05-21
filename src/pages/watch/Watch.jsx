@@ -22,7 +22,6 @@ export const WatchIndex = () => {
         setLoading(false);
       }
     })();
-  }, [query]);
 
   return (
     <WithHeader>
