@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { WithHeader } from "../../layout/WithHeader";
 
 import { fetchVideo } from "../../api/videos";
+import { Loading } from "../../component/Loading";
 
 export const WatchIndex = () => {
   const [loading, setLoading] = useState(false);
@@ -31,6 +32,7 @@ export const WatchIndex = () => {
 
   return (
     <WithHeader>
+      {loading ? <Loading /> : null}
       <div className="flex flex-col items-center">
         <iframe
           width="360"
