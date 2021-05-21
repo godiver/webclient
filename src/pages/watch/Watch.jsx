@@ -24,9 +24,23 @@ export const WatchIndex = () => {
     })();
   }, []);
 
+
+  const videoLink = (videoId) => {
+    return `https://www.youtube.com/embed/${videoId}`
+  }
+
   return (
     <WithHeader>
       <div className="flex flex-col items-center">
+        <iframe
+          width="360"
+          height="280"
+          src={video.snippet ? videoLink(video.id.videoId) : ""}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
         <div className="sm:w-full w-3/5 mb-2 cursor-pointer">
           {video.snippet ? video.snippet.title : <p>タイトル</p>}
         </div>
