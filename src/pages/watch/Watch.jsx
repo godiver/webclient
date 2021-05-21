@@ -22,6 +22,7 @@ export const WatchIndex = () => {
         setLoading(false);
       }
     })();
+  }, []);
 
   return (
     <WithHeader>
