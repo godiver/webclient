@@ -8,10 +8,9 @@ import { fetchVideo } from "../../api/videos";
 export const WatchIndex = () => {
   const [loading, setLoading] = useState(false);
   const [video, setVideo] = useState({});
-  const location = useLocation();
+  const query = new URLSearchParams(useLocation().search);
 
   useEffect(() => {
-    const query = new URLSearchParams(location.search);
     const videoId = query.get("videoId");
     (async () => {
       try {
@@ -23,7 +22,7 @@ export const WatchIndex = () => {
         setLoading(false);
       }
     })();
-  }, []);
+  }, [query]);
 
   return (
     <WithHeader>
