@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { useHistory, useLocation } from "react-router-dom";
+
 class Top extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +21,7 @@ class Top extends Component {
   renderBooks = () => {
     return this.state.books.map((book, index) => (
       <li key={index}>
-        <Link to={`/api/v1/books/videos/?title=${book.Item.title}`}>{book.Item.title}</Link>
+        <Link to={`/books/videos/?title=${book.Item.title}`}>{book.Item.title}</Link>
       </li>
     ))
   }
