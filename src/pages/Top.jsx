@@ -20,7 +20,7 @@ class Top extends Component {
   renderBooks = () => {
     return this.state.books.map((book, index) => (
       <li key={index}>
-        <Link to={`/videos?title=${book.Item.title}`}>{book.Item.title}</Link>
+        <Link to={`/api/v1/books/videos/?title=${book.Item.title}`}>{book.Item.title}</Link>
       </li>
     ))
   }
