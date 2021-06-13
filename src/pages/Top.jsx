@@ -2,6 +2,30 @@ import React, { Component, useEffect, useState } from 'react';
 import axios from 'axios'
 import { useHistory, useLocation } from "react-router-dom";
 
+export const VideosSearch = () => {
+  const [videos, setBooks] = useState([]);
+  const query = new URLSearchParams(useLocation().search);
+  const history = useHistory();
+
+  useEffect(() => {
+    const title = query.get("title");
+    (async () => {
+      try {
+        setLoading(true);
+        const response = await fetchVideos(title);
+        setVideos(response.data.items);
+      } catch (e) {
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  const handleClick = (e) => {
+    const clickedVideoId = e.currentTarget.getAttribute("videoid");
+    const video = videos.find((video) => video.id.videoId === clickedVideoId);
+    history.push(`/videos?title=${video.id.videoId}`);
+  };
 class Top extends Component {
   constructor(props) {
     super(props);
