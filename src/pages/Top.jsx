@@ -1,6 +1,7 @@
-import React, { Component, useEffect, useState } from 'react';
-import axios from 'axios'
+import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
+
+import { WithHeader } from "../../layout/WithHeader";
 
 export const VideosSearch = () => {
   const [books, setBooks] = useState([]);
