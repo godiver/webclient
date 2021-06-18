@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import { WithHeader } from "../../layout/WithHeader";
+import { Loading } from "../../component/Loading";
 
 import { fetchVideo } from "../../api/videos";
 import { Loading } from "../../component/Loading";
@@ -9,11 +10,12 @@ import { Loading } from "../../component/Loading";
 export const WatchIndex = () => {
   const [loading, setLoading] = useState(false);
   const [video, setVideo] = useState({});
-  const query = new URLSearchParams(useLocation().search);
+  const location = useLocation();
 
   useEffect(() => {
-    const videoId = query.get("videoId");
     (async () => {
+      const query = new URLSearchParams(location.search);
+      const videoId = query.get("videoId");
       try {
         setLoading(true);
         const response = await fetchVideo(videoId);
@@ -23,7 +25,7 @@ export const WatchIndex = () => {
         setLoading(false);
       }
     })();
-  }, []);
+  }, [location]);
 
 
   const videoLink = (videoId) => {
