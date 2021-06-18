@@ -5,7 +5,6 @@ import { WithHeader } from "../../layout/WithHeader";
 import { Loading } from "../../component/Loading";
 
 import { fetchVideo } from "../../api/videos";
-import { Loading } from "../../component/Loading";
 
 export const WatchIndex = () => {
   const [loading, setLoading] = useState(false);
