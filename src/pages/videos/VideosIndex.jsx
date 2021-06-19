@@ -2,19 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
 import { WithHeader } from "../../layout/WithHeader";
+import { Loading } from "../../component/Loading";
 
 import { fetchVideos } from "../../api/videos";
-import { Loading } from "../../component/Loading";
 
 export const VideosIndex = () => {
   const [loading, setLoading] = useState(false);
   const [videos, setVideos] = useState([]);
-  const query = new URLSearchParams(useLocation().search);
+  const location = useLocation();
   const history = useHistory();
 
   useEffect(() => {
-    const title = query.get("title");
     (async () => {
+      const query = new URLSearchParams(location.search);
+      const title = query.get("title");
       try {
         setLoading(true);
         const response = await fetchVideos(title);
@@ -24,7 +25,7 @@ export const VideosIndex = () => {
         setLoading(false);
       }
     })();
-  }, []);
+  }, [location]);
 
   const handleClick = (e) => {
     const clickedVideoId = e.currentTarget.getAttribute("videoid");
