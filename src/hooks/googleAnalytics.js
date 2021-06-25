@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 export function useGoogleAnalytics() {
   useEffect(() => {
+    console.log(process.env.REACT_APP_GTAG_ID);
     console.log(process.env.GTAG_ID);
     if (process.env.NODE_ENV === "production") return;
     const scriptSettingGoogleAnalytics = document.createElement("script");
