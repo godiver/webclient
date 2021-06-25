@@ -1,6 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 
 export function useGoogleAnalytics() {
+  const [completed, setCompleted] = useState(false);
+  const { listen } = useHistory();
   useEffect(() => {
     if (process.env.NODE_ENV === "production") return;
     const scriptSettingGoogleAnalytics = document.createElement("script");
@@ -14,5 +17,18 @@ export function useGoogleAnalytics() {
     gtag('js', new Date());
     gtag('config', ${process.env.REACT_APP_GTAG_ID});`;
     document.head.appendChild(scriptProcessingGoogleAnalytics);
+
+    setCompleted(true);
   }, []);
+
+  useEffect(() => {
+    (async () => {
+      listen((location) => {
+        if (!window.gtag) return;
+        window.gtag("config", process.env.REACT_APP_GTAG_ID, {
+          page_path: location.pathname,
+        });
+      });
+    })();
+  }, [completed, listen]);
 }
