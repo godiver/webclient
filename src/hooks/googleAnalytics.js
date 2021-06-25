@@ -13,5 +13,6 @@ export function useGoogleAnalytics() {
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', ${process.env.REACT_APP_GTAG_ID});`;
+    document.body.appendChild(scriptProcessingGoogleAnalytics);
   }, []);
 }
