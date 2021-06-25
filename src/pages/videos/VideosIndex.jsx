@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
+import { useGoogleAnalytics } from "../../hooks/googleAnalytics";
+
 import { WithHeader } from "../../layout/WithHeader";
 import { Loading } from "../../component/Loading";
 
@@ -11,6 +13,7 @@ export const VideosIndex = () => {
   const [videos, setVideos] = useState([]);
   const location = useLocation();
   const history = useHistory();
+  useGoogleAnalytics();
 
   useEffect(() => {
     (async () => {

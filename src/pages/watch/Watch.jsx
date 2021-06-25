@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+import { useGoogleAnalytics } from "../../hooks/googleAnalytics";
+
 import { WithHeader } from "../../layout/WithHeader";
 import { Loading } from "../../component/Loading";
 
@@ -10,6 +12,7 @@ export const WatchIndex = () => {
   const [loading, setLoading] = useState(false);
   const [video, setVideo] = useState({});
   const location = useLocation();
+  useGoogleAnalytics();
 
   useEffect(() => {
     (async () => {
