@@ -13,6 +13,8 @@ export const VideosIndex = () => {
   const history = useHistory();
 
   useEffect(() => {
+    console.log("process.env.NODE_ENV");
+    console.log(process.env.NODE_ENV);
     (async () => {
       const query = new URLSearchParams(location.search);
       const title = query.get("title");
