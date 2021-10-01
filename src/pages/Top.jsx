@@ -33,22 +33,25 @@ export const VideosSearch = () => {
   return (
     <WithHeader>
       {loading ? <Loading /> : null}
-      <div className="flex flex-col items-center">
-        {books.map((book) => (
-          <div
-            key={book.Item.title}
-            title={book.Item.title}
-            onClick={handleClick}
-            className="sm:w-full w-3/5 mb-2 cursor-pointer"
-          >
-            <div className="w-full py-2 px-2">
-              <div className="sm:w-full font-medium text-xl leading-tight truncate">
-                <img src={book.Item.largeImageUrl} alt="Logo" />
+
+      <main class='container mx-auto'>
+        <div className="flex flex-wrap justify-center">
+          {books.map((book) => (
+            <div
+              key={book.Item.title}
+              title={book.Item.title}
+              onClick={handleClick}
+              className="mb-2 cursor-pointer"
+            >
+              <div className="w-full py-2 px-2">
+                <div className="sm:w-full font-medium text-xl leading-tight truncate">
+                  <img src={book.Item.largeImageUrl} alt="Logo" />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </main>
     </WithHeader>
   );
 }
