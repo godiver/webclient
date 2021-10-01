@@ -43,7 +43,7 @@ export const VideosSearch = () => {
           >
             <div className="w-full py-2 px-2">
               <div className="sm:w-full font-medium text-xl leading-tight truncate">
-                {book.Item.title}
+                <img src={book.Item.largeImageUrl} alt="Logo" />
               </div>
             </div>
           </div>
