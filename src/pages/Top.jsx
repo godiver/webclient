@@ -9,6 +9,7 @@ import { Loading } from "../component/Loading";
 export const VideosSearch = () => {
   const [loading, setLoading] = useState(false);
   const [books, setBooks] = useState([]);
+  const [searchBooks, setSearchBooks] = useState("");
   const history = useHistory();
 
   useEffect(() => {
@@ -30,10 +31,17 @@ export const VideosSearch = () => {
     history.push(`/videos?title=${book.Item.title}`);
   };
 
+  const handleSearchBooksFunction = (e) => {
+    setSearchBooks(e.target.value);
+  }
+
   return (
     <WithHeader>
       {loading ? <Loading /> : null}
       <div className="flex flex-col items-center">
+        <form className="Search">
+          <input value={searchBooks} onChange={handleSearchBooksFunction} type="text"/>
+        </form>
         {books.map((book) => (
           <div
             key={book.Item.title}
