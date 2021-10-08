@@ -35,7 +35,7 @@ export const VideosSearch = () => {
       {loading ? <Loading /> : null}
 
       <main class='container mx-auto'>
-        <div className="flex flex-wrap justify-center">
+        <div className="grid grid-cols-6 sm:grid-cols-2 justify-items-center">
           {books.map((book) => (
             <div
               key={book.Item.title}
