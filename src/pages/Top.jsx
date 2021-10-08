@@ -34,7 +34,7 @@ export const VideosSearch = () => {
     <WithHeader>
       {loading ? <Loading /> : null}
 
-      <div className="grid grid-cols-6 sm:grid-cols-2 justify-items-center">
+      <div className="grid grid-cols-6 sm:grid-cols-2 justify-items-center lg:w-full w-3/4 mx-auto">
         {books.map((book) => (
           <div
             key={book.Item.title}
@@ -43,7 +43,7 @@ export const VideosSearch = () => {
             className="cursor-pointer"
           >
             <div className="py-2 px-2">
-              <img src={book.Item.largeImageUrl} alt="Logo" />
+              <img src={book.Item.largeImageUrl} alt="Logo" className="w-60 h-auto" />
             </div>
           </div>
         ))}
