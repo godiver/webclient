@@ -40,12 +40,10 @@ export const VideosSearch = () => {
             key={book.Item.title}
             title={book.Item.title}
             onClick={handleClick}
-            className="mb-2 cursor-pointer"
+            className="cursor-pointer"
           >
-            <div className="w-full py-2 px-2">
-              <div className="sm:w-full font-medium text-xl leading-tight truncate">
-                <img src={book.Item.largeImageUrl} alt="Logo" />
-              </div>
+            <div className="py-2 px-2">
+              <img src={book.Item.largeImageUrl} alt="Logo" />
             </div>
           </div>
         ))}
