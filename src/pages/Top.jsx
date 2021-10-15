@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import { WithHeader } from "../layout/WithHeader";
 
-import { fetchVideosIndex } from "../api/videos";
+import { fetchVideosIndex, fetchSearchBooks } from "../api/videos";
 import { Loading } from "../component/Loading";
 
 export const VideosSearch = () => {
@@ -35,12 +35,27 @@ export const VideosSearch = () => {
     setSearchBooks(e.target.value);
   }
 
+  const callSearchFunction = (e) => {
+    e.preventDefault()
+    (async() => {
+      try {
+        setLoading(true);
+        const response = fetchSearchBooks(searchBooks)
+        setSearchBooks(response.data.Items.title)
+      } catch(e) {
+      } finally {
+        setLoading(false);
+      }
+    })
+  }
+
   return (
     <WithHeader>
       {loading ? <Loading /> : null}
       <div className="flex flex-col items-center">
         <form className="Search">
           <input value={searchBooks} onChange={handleSearchBooksFunction} type="text"/>
+          <input onClick={callSearchFunction} type="submit" value="検索"/>
         </form>
         {books.map((book) => (
           <div
