@@ -47,22 +47,21 @@ export const VideosSearch = () => {
   return (
     <WithHeader>
       {loading ? <Loading /> : null}
-      <div className="flex flex-col items-center">
+      <div className="grid grid-cols-6 sm:grid-cols-2 justify-items-center lg:w-full w-3/4 mx-auto">
         <form className="Search">
           <input value={searchBooks} onChange={handleSearchBooksFunction} type="text"/>
           <input onClick={callSearchFunction} type="submit" value="検索"/>
         </form>
+
         {books.map((book) => (
           <div
             key={book.Item.title}
             title={book.Item.title}
             onClick={handleClick}
-            className="sm:w-full w-3/5 mb-2 cursor-pointer"
+            className="cursor-pointer"
           >
-            <div className="w-full py-2 px-2">
-              <div className="sm:w-full font-medium text-xl leading-tight truncate">
-                {book.Item.title}
-              </div>
+            <div className="py-2 px-2">
+              <img src={book.Item.largeImageUrl} alt="Logo" className="w-60 h-auto" />
             </div>
           </div>
         ))}
