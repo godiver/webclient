@@ -10,6 +10,7 @@ export const VideosSearch = () => {
   const [loading, setLoading] = useState(false);
   const [books, setBooks] = useState([]);
   const [searchBooks, setSearchBooks] = useState("");
+  const [responseSearchBooks, setResponseSearchBooks] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -35,18 +36,12 @@ export const VideosSearch = () => {
     setSearchBooks(e.target.value);
   }
 
-  const callSearchFunction = (e) => {
+  const callSearchFunction = async (e) => {
+    setLoading(true);
     e.preventDefault()
-    (async() => {
-      try {
-        setLoading(true);
-        const response = fetchSearchBooks(searchBooks)
-        setSearchBooks(response.data.Items.title)
-      } catch(e) {
-      } finally {
-        setLoading(false);
-      }
-    })
+    const response = await fetchSearchBooks(searchBooks)
+    setResponseSearchBooks(response.data.Items)
+    setLoading(false);
   }
 
   return (
