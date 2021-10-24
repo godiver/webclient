@@ -29,7 +29,7 @@ export const VideosSearch = () => {
 
   const handleClick = (e) => {
     const clickedBookTitle = e.currentTarget.getAttribute("title");
-    const book = books.find((book) => book.Item.title === clickedBookTitle);
+    const book = !responseSearchBooks.length ? books.find((book) => book.Item.title === clickedBookTitle) : responseSearchBooks.find((book) => book.Item.title === clickedBookTitle);
     history.push(`/videos?title=${book.Item.title}`);
   };
 
