@@ -57,7 +57,10 @@ export const VideosSearch = () => {
           <input onClick={callSearchFunction} type="submit" value="検索"/>
         </form>
 
-        {responseSearchBooks ? <BookList books={books} handleClick={handleClick}/> : <BookListSearched books={responseSearchBooks} handleClick={handleClick}/>}
+        { !responseSearchBooks.length ?
+        <BookList books={books} handleClick={handleClick}/> :
+        <BookListSearched books={responseSearchBooks} handleClick={handleClick}/> }
+
       </div>
     </WithHeader>
   );
