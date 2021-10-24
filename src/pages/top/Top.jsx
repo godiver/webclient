@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 
-import { WithHeader } from "../layout/WithHeader";
+import { WithHeader } from "../../layout/WithHeader";
 
-import { fetchVideosIndex, fetchSearchBooks } from "../api/videos";
-import { Loading } from "../component/Loading";
+import { fetchVideosIndex, fetchSearchBooks } from "../../api/videos";
+import { Loading } from "../../component/Loading";
 
 export const VideosSearch = () => {
   const [loading, setLoading] = useState(false);
@@ -42,6 +42,7 @@ export const VideosSearch = () => {
     e.preventDefault()
     const response = await fetchSearchBooks(searchBooks)
     setResponseSearchBooks(response.data.Items)
+    console.log(response.data.Items)
     setLoading(false);
   }
 
