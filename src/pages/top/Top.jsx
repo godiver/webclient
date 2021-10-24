@@ -5,6 +5,7 @@ import { WithHeader } from "../../layout/WithHeader";
 
 import { fetchVideosIndex, fetchSearchBooks } from "../../api/videos";
 import { Loading } from "../../component/Loading";
+import { BookList } from "./BookList";
 
 export const VideosSearch = () => {
   const [loading, setLoading] = useState(false);
@@ -55,18 +56,7 @@ export const VideosSearch = () => {
           <input onClick={callSearchFunction} type="submit" value="検索"/>
         </form>
 
-        {books.map((book) => (
-          <div
-            key={book.Item.title}
-            title={book.Item.title}
-            onClick={handleClick}
-            className="cursor-pointer"
-          >
-            <div className="py-2 px-2">
-              <img src={book.Item.largeImageUrl} alt="Logo" className="w-60 h-auto" />
-            </div>
-          </div>
-        ))}
+        <BookList books={books} handleClick={handleClick}/>
       </div>
     </WithHeader>
   );
