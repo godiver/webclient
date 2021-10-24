@@ -59,7 +59,7 @@ export const VideosSearch = () => {
 
         { !responseSearchBooks.length ?
         <BookList books={books} handleClick={handleClick}/> :
-        <BookListSearched books={responseSearchBooks} handleClick={handleClick}/> }
+        <BookListSearched responseSearchBooks={responseSearchBooks} handleClick={handleClick}/> }
 
       </div>
     </WithHeader>
