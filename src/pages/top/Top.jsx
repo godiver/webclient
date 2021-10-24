@@ -6,7 +6,6 @@ import { WithHeader } from "../../layout/WithHeader";
 import { fetchVideosIndex, fetchSearchBooks } from "../../api/videos";
 import { Loading } from "../../component/Loading";
 import { BookList } from "./BookList";
-import { BookListSearched } from "./BookListSearched";
 
 export const VideosSearch = () => {
   const [loading, setLoading] = useState(false);
@@ -56,9 +55,7 @@ export const VideosSearch = () => {
           <input onClick={callSearchFunction} type="submit" value="検索"/>
         </form>
 
-        { !responseSearchBooks.length ?
-        <BookList books={books} handleClick={handleClick}/> :
-        <BookListSearched responseSearchBooks={responseSearchBooks} handleClick={handleClick}/> }
+        <BookList books={!responseSearchBooks.length ? books : responseSearchBooks} handleClick={handleClick}/>
 
       </div>
     </WithHeader>
