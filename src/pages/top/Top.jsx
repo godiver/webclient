@@ -56,7 +56,6 @@ export const VideosSearch = () => {
         </form>
 
         <BookList books={!responseSearchBooks.length ? books : responseSearchBooks} handleClick={handleClick}/>
-
       </div>
     </WithHeader>
   );
