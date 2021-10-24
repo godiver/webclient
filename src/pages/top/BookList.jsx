@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const BookList = ({books, handleClick}) => {
-  console.log("render on")
   return (
     <>
       {books.map((book) => (

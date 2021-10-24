@@ -44,7 +44,6 @@ export const VideosSearch = () => {
     e.preventDefault()
     const response = await fetchSearchBooks(searchBooks)
     setResponseSearchBooks(response.data.Items)
-    console.log(response.data.Items)
     setLoading(false);
   }
 
