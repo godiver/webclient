@@ -27,12 +27,6 @@ export const VideosSearch = () => {
     })();
   }, []);
 
-  const handleClick = (e) => {
-    const clickedBookTitle = e.currentTarget.getAttribute("title");
-    const book = !responseSearchBooks.length ? books.find((book) => book.Item.title === clickedBookTitle) : responseSearchBooks.find((book) => book.Item.title === clickedBookTitle);
-    history.push(`/videos?title=${book.Item.title}`);
-  };
-
   const handleSearchBooksFunction = (e) => {
     setSearchBooks(e.target.value);
   }
@@ -55,7 +49,7 @@ export const VideosSearch = () => {
           <input onClick={callSearchFunction} type="submit" value="検索"/>
         </form>
 
-        <BookList books={!responseSearchBooks.length ? books : responseSearchBooks} handleClick={handleClick}/>
+        <BookList books={!responseSearchBooks.length ? books : responseSearchBooks} history={history}/>
       </div>
     </WithHeader>
   );
