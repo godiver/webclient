@@ -1,6 +1,13 @@
 import React from 'react';
 
-export const BookList = ({books, handleClick}) => {
+export const BookList = ({ books, history }) => {
+
+  const handleClick = (e) => {
+    const clickedBookTitle = e.currentTarget.getAttribute("title");
+    const book = books.find((book) => book.Item.title === clickedBookTitle);
+    history.push(`/videos?title=${book.Item.title}`);
+  };
+
   return (
     <>
       {books.map((book) => (
