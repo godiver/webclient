@@ -36,7 +36,7 @@ export const VideosSearch = () => {
     setSearchBooks(e.target.value);
   }
 
-  /* 検索ボタンを押したらapi側にフォームに入力した内容がタイトルに含まれている本を取得 */
+  /* 検索ボタンを押したらフォームに入力した内容がタイトルに含まれている本を取得 */
   const callSearchFunction = async (e) => {
     setLoading(true);
     e.preventDefault()
