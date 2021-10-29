@@ -27,12 +27,12 @@ export const VideosSearch = () => {
     })();
   }, []);
 
-  const handleSearchBooksFunction = (e) => {
+  const handleSearchBooks = (e) => {
     setSearchBooks(e.target.value);
   }
 
   /* 検索ボタンを押したらフォームに入力した内容がタイトルに含まれている本を取得 */
-  const callSearchFunction = async (e) => {
+  const callSearch = async (e) => {
     setLoading(true);
     e.preventDefault()
     const response = await fetchSearchBooks(searchBooks)
@@ -45,8 +45,8 @@ export const VideosSearch = () => {
       {loading ? <Loading /> : null}
       <div className="grid grid-cols-6 sm:grid-cols-2 justify-items-center lg:w-full w-3/4 mx-auto">
         <form className="Search">
-          <input value={searchBooks} onChange={handleSearchBooksFunction} type="text"/>
-          <input onClick={callSearchFunction} type="submit" value="検索"/>
+          <input value={searchBooks} onChange={handleSearchBooks} type="text"/>
+          <input onClick={callSearch} type="submit" value="検索"/>
         </form>
 
         <BookList books={!responseSearchBooks.length ? books : responseSearchBooks} history={history}/>
