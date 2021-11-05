@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';//　追加　Linkタブを読み込む
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   return (
