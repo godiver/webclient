@@ -8,7 +8,7 @@ export const Header = () => {
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1 text-gray-50">
             <Link to={`/`}>
-              <img src="./logo.svg" alt="logo" className="h-14 w-auto" />
+              <img src="./logo.svg" alt="logo" className="h-12 w-auto" />
             </Link>
           </div>
         </div>
