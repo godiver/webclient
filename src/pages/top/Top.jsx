@@ -6,7 +6,7 @@ import { WithHeader } from "../../layout/WithHeader";
 import { fetchVideosIndex, fetchSearchBooks } from "../../api/videos";
 import { Loading } from "../../component/Loading";
 import { BookList } from "./BookList";
-import magnifyingGlass from "../../images/search.png";
+import magnifyingGlass from "../../images/search.svg";
 
 export const VideosSearch = () => {
   const [loading, setLoading] = useState(false);
