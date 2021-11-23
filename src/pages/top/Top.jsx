@@ -6,6 +6,7 @@ import { WithHeader } from "../../layout/WithHeader";
 import { fetchVideosIndex, fetchSearchBooks } from "../../api/videos";
 import { Loading } from "../../component/Loading";
 import { BookList } from "./BookList";
+import magnifyingGlass from "../../images/search.png";
 
 export const VideosSearch = () => {
   const [loading, setLoading] = useState(false);
@@ -43,10 +44,11 @@ export const VideosSearch = () => {
   return (
     <WithHeader>
       {loading ? <Loading /> : null}
-      <form className="w-10/12 mx-auto md:max-w-md">
+      <form className="w-11/12 mx-auto md:max-w-md mt-5">
         <div className="mb-8 flex justify-center">
-          <input value={searchBooks} onChange={handleSearchBooks} type="text" className="w-3/5 py-2 border-b focus:outline-none focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50 focus:border-transparent" placeholder="検索"/>
-          <input onClick={callSearch} type="submit" value="検索"/>
+          <input value={searchBooks} onChange={handleSearchBooks} type="text" className="w-9/12 py-2 border-b focus:outline-none focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50 focus:border-transparent" placeholder="タイトルを入力"/>
+          <input onClick={callSearch} type="submit" className="ml-1 bg-blue-600"/>
+          <img src={magnifyingGlass} alt="Logo" className="w-6 h-6 -ml-7 mt-2" />
         </div>
       </form>
       <div className="grid grid-cols-6 sm:grid-cols-2 justify-items-center lg:w-full w-3/4 mx-auto">
