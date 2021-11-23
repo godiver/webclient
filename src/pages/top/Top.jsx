@@ -46,7 +46,7 @@ export const VideosSearch = () => {
       {loading ? <Loading /> : null}
       <form className="w-11/12 mx-auto md:max-w-md mt-5">
         <div className="mb-8 flex justify-center">
-          <input value={searchBooks} onChange={handleSearchBooks} type="text" className="w-9/12 py-2 border-b focus:outline-none focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50 focus:border-transparent" placeholder="タイトルを入力"/>
+          <input value={searchBooks} onChange={handleSearchBooks} type="text" className="w-9/12 py-2 border-b focus:outline-none focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50 focus:border-transparent bg-gray-100" placeholder="タイトルを入力"/>
           <button onClick={callSearch} type="submit" className="w-9 h-10 rounded-md bg-main-500 ">
             <img src={magnifyingGlass} alt="Logo" className="w-6 h-7 ml-1"/>
           </button>
