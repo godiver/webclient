@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./index.css";
 
-import { VideosSearch } from "./pages/Top";
+import { VideosSearch } from "./pages/top/Top";
 import { VideosIndex } from "./pages/videos/VideosIndex";
 import { WatchIndex } from "./pages/watch/Watch";
 import { Test } from "./pages/Test";

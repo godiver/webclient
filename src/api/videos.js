@@ -13,3 +13,7 @@ export const fetchVideos = async (title) => {
 export const fetchVideo = async (videoId) => {
   return api.get(`${apiURL}/api/v1/watch/${videoId}`);
 };
+
+export const fetchSearchBooks = async (title) => {
+  return api.get(`${apiURL}/api/v1/books/search/${title}`)
+};
