@@ -9,6 +9,7 @@ import { VideosIndex } from "./pages/videos/VideosIndex";
 import { WatchIndex } from "./pages/watch/Watch";
 import { Test } from "./pages/Test";
 import { SignUp } from "./pages/signup/SignUp";
+import { Login } from "./pages/login/Login";
 
 export const AppWithRouter = () => {
   return (
@@ -19,6 +20,7 @@ export const AppWithRouter = () => {
         <Route exact path="/watch" component={WatchIndex}></Route>
         <Route exact path="/test" component={Test}></Route>
         <Route exact path="/signup" component={SignUp}></Route>
+        <Route exact path="/login" component={Login}></Route>
       </Switch>
     </Router>
   );
