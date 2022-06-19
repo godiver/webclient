@@ -1,27 +1,39 @@
-import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
+import { Link } from "react-router-dom";
 
 export const Login = () => {
 
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
+  const [user, setUser] = useState("");
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await createUserWithEmailAndPassword(
+      await signInWithEmailAndPassword(
         auth,
-        registerEmail,
-        registerPassword
-      );
+        Email,
+        Password
+      )
+      history.push("/")
     } catch(error) {
       alert("正しく入力してください");
     }
   }
 
-  return(
+  /* ログイン判定 */
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, (currentuser) => {
+  //     setUser(currentuser);
+  //   });
+  // }, [])
+
+  return (
     <>
       <h1>ログイン</h1>
       <form onSubmit={handleSubmit}>
@@ -30,8 +42,8 @@ export const Login = () => {
           <input
             name="email"
             type="email"
-            value={registerEmail}
-            onChange={(e) => setRegisterEmail(e.target.value)}
+            value={Email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="email"
           />
         </div>
@@ -40,16 +52,14 @@ export const Login = () => {
           <input
             name="password"
             type="password"
-            value={registerPassword}
-            onChange={(e) => setRegisterPassword(e.target.value)}
+            value={Password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div>
           <button>ログイン</button>
         </div>
       </form>
-
-      
     </>
   )
 };
